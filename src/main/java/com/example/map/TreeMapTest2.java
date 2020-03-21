@@ -16,7 +16,5 @@ public class TreeMapTest2 {
             Map.Entry key = (Map.Entry) iterator.next();
             System.out.println(key);
         }
-
-
     }
 }
