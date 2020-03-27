@@ -10,6 +10,7 @@ public class TreeMapTest2 {
         map.put("a","aa");
         map.put("c","cc");
         map.put("d","dd");
+        map.put("d","ee");
 
         Set set = map.entrySet();
         for (Iterator iterator = set.iterator(); iterator.hasNext();){

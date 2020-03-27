@@ -1,6 +1,8 @@
 package com.example.map;
 
+import java.util.Collection;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 public class TreeMapTest {
@@ -16,11 +18,12 @@ public class TreeMapTest {
         map.put("a",p2);
         map.put("c",p3);
         map.put("d",p4);
-
+//        System.out.println();
         for (Map.Entry<String,Person> entry : map.entrySet()){
             System.out.println(entry.getKey() + "=" + entry.getValue().age);
         }
-        System.out.println(map);
+        Set collection = map.entrySet();
+        System.out.println(map.entrySet());
     }
 
 }
