@@ -8,8 +8,11 @@ public class TestStringFeatrue {
         System.out.println(s1 == s2);//false
         System.out.println(s1.equals(s2));//true
 
+        //indexOf
+        System.out.println(s1.indexOf("C"));
         Object o1 = new Object();
         Object o2 = new Object();
         System.out.println(o1.equals(o2));
+
     }
 }
