@@ -24,6 +24,7 @@ public class IteratorEachLamdaTest {
         list.add("xiao");
         list.add("lian");
         Iterator iterator = list.iterator();
+        //使用lamda表达式，来遍历集合
         iterator.forEachRemaining(l -> {l.toString(); });
     }
 }
