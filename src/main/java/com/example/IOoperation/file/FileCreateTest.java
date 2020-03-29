@@ -25,5 +25,6 @@ public class FileCreateTest {
         for (File f : files){
             System.out.println(f.getName());
         }
+        System.out.println("系统默认编码：" + System.getProperty("file.encoding"));
     }
 }
