@@ -24,6 +24,7 @@ public class TreeMapTest {
         }
         Set collection = map.entrySet();
         System.out.println(map.entrySet());
+
     }
 
 }
