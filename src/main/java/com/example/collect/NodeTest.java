@@ -15,7 +15,7 @@ public class NodeTest {
 
         node3.data = "3";
         node3.next = null;
-//        插入
+        //插入
         node4.data = "4";
         node1.next = node4;
 
