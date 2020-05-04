@@ -1,5 +1,8 @@
 package com.example.leetcode;
 
+/**
+ * 查找插入位置
+ */
 public class SearchInsert {
 //    假设升序
     public static void main(String[] args) {
