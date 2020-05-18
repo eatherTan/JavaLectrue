@@ -30,6 +30,13 @@ public class MergeTwoLists {
             result = result.next;
         }
     }
+
+    /**
+     * 合并两个链表
+     * @param l1
+     * @param l2
+     * @return
+     */
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode prehead = new ListNode(-1);
         if (l1 == null){
