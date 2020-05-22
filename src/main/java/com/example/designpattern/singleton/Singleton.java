@@ -1,5 +1,6 @@
 package com.example.designpattern.singleton;
 
+//饿汉模式
 public class Singleton {
 
     private static Singleton instance = new Singleton();
