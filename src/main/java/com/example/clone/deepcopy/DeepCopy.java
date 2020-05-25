@@ -1,5 +1,6 @@
 package com.example.clone.deepcopy;
 
+//深拷贝
 public class DeepCopy {
     public static void main(String[] args) {
         Subject subject = new Subject("yuwen");
@@ -15,5 +16,6 @@ public class DeepCopy {
         subjectB.setName("lishi");
         System.out.println("studentA:" + studentA.toString());
         System.out.println("studentB:" + studentB.toString());
+        //深拷贝：修改引用类型变量也不会影响原来对象的值
     }
 }
