@@ -6,5 +6,9 @@ public class StringBufferTest {
         buffer.append("hello");
         buffer.insert(0,"lala");
         System.out.println(buffer);
+        int b = 8;
+        int a = b--;
+        int c = ++a;
+        System.out.println(c);
     }
 }
