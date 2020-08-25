@@ -64,24 +64,61 @@ public class SparseArray {
             System.out.println();
         }
 
-        //课后作业：把稀疏数组写入文件中，再读取出来
-        File file = new File("D:/ProjectCode/sparceArray.txt");
+        //课后作业1：把稀疏数组写入文件中，再读取出来
+        File file = new File("D:\\ProjectCode\\sparseArray.txt");
         try {
-            FileOutputStream stream = new FileOutputStream(file);
+            Writer writer = new FileWriter(file);
             for (int i = 0; i < sparseArr.length; i++){
                 for (int j = 0; j < sparseArr[i].length; j++){
-                    stream.write(sparseArr[i][j]);
+                    writer.write(sparseArr[i][j] + "\t");
                 }
+                writer.write("\r\n");
             }
-            int[][] newArr = new int[sparseArr[0][0]][sparseArr[0][1]];
-            FileInputStream fileInputStream = new FileInputStream("D:/ProjectCode/sparceArray.txt");
-
+            writer.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-//      二维数组  和 稀疏数组的相互转换 及 数据存入文件中：https://www.cnblogs.com/zhukaixin/p/11524282.html
+        //二维数组  和 稀疏数组的相互转换 及 数据存入文件中：https://www.cnblogs.com/zhukaixin/p/11524282.html
+        //课后作业2：从文件中恢复稀疏数组
+        File file1 = new File("D:\\ProjectCode\\sparseArray.txt");
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(file1));
+            int row = 0;
+            String line;
+            while ((line = reader.readLine()) != null){
+                row++;
+            }
+            int sparseArr2[][] = new int [row][3];
+            //3.2文本数据转移到稀疏数组中
+            int rowtmp = 0;
+            //由于读取完毕整个文本文档，所以不妨”重启“流
+            reader.close();
+            reader = new BufferedReader(new FileReader("D:\\ProjectCode\\sparseArray.txt"));
+            while ((line = reader.readLine()) != null) {
+                String[] temp = line.split("\t");
+                for (int j = 0; j < temp.length; j++) {
+                    sparseArr2[rowtmp][j]=Integer.parseInt(temp[j]);
+                }
+                rowtmp++;
+            }
+            //4.关闭流
+            reader.close();
+            //验证文件读取是否正确
+            System.out.println("文件读取数据");
+            for(int[]temp1:sparseArr2) {
+                for (int temp2 : temp1) {
+                    System.out.printf("%d\t", temp2);
+                }
+                System.out.println();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }
