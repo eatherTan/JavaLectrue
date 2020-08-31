@@ -1,4 +1,4 @@
-package com.example.stack;
+package com.example.lineartable;
 
 import java.util.LinkedList;
 
