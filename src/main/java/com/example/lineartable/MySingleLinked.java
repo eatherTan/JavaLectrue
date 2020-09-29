@@ -1,5 +1,7 @@
 package com.example.lineartable;
 
+import java.util.Stack;
+
 /*
  线性表
  */
@@ -24,6 +26,8 @@ public class MySingleLinked {
         singleLinkedList.reverseLinkedList(singleLinkedList.getHead());
         singleLinkedList.showList();
         System.out.println("反转链表成功");
+        System.out.println("方法一倒序输出链表");
+        singleLinkedList.showReverseListInfo1(singleLinkedList.getHead());
         HeroNode kNode = singleLinkedList.getLastKNode(2);
         System.out.println("倒数第2个节点" + kNode.no + " " + kNode.name + " " + kNode.nickname);
         HeroNode kNode1 = singleLinkedList.getLastKNode(5);
@@ -232,6 +236,29 @@ class SingleLinkedList{
             temp = temp.next;
         }
     }
+
+    //倒序输出链表的信息：方法一使用Stack
+    public void showReverseListInfo1(HeroNode head){
+        Stack<HeroNode> stack = new Stack();
+        HeroNode temp = head.next;
+        while (temp != null){
+            stack.push(temp);
+            temp = temp.next;
+        }
+        while (!stack.empty()){
+            HeroNode node = stack.pop();
+            System.out.println(node.no + " " + node.name + " " + node.nickname + " \n");
+        }
+    }
+    //倒序输出链表的信息：方法二使用递归
+    public void showReverseListInfo2(HeroNode head){
+        if (head.next == null){
+            System.out.println(head.no + " " + head.name + " " + head.nickname + " \n");
+        }
+//        showReverseListInfo1(head.next);
+        System.out.println(head.no + " " + head.name + " " + head.nickname + " \n");
+    }
+
 }
 class HeroNode {
     public int no;
