@@ -250,7 +250,7 @@ class SingleLinkedList{
             System.out.println(node.no + " " + node.name + " " + node.nickname + " \n");
         }
     }
-    //倒序输出链表的信息：方法二使用递归
+    //倒序输出链表的信息：方法二使用递归，这个方法还不会
     public void showReverseListInfo2(HeroNode head){
         if (head.next == null){
             System.out.println(head.no + " " + head.name + " " + head.nickname + " \n");
@@ -259,6 +259,37 @@ class SingleLinkedList{
         System.out.println(head.no + " " + head.name + " " + head.nickname + " \n");
     }
 
+    /**
+     * 合并两个有序单链表，合并之后的链表依然有序
+     * @param l1
+     * @param l2
+     */
+    public HeroNode mergeTwoList(HeroNode l1,HeroNode l2){
+        if (l1 == null){
+            return l2;
+        }
+        if (l2 == null){
+            return l1;
+        }
+        HeroNode aheah = new HeroNode(-1,"","");
+        HeroNode temp = aheah;
+        while (l1 != null && l2 != null){
+            if (l1.no < l2.no){
+                temp.next = l1;
+                temp = temp.next;
+            }else {
+                l1.next = l2;
+                temp = temp.next;
+            }
+        }
+        if (l1 != null){
+            temp.next = l1;
+        }
+        if (l2 != null){
+            temp.next = l2;
+        }
+        return aheah.next;
+    }
 }
 class HeroNode {
     public int no;
