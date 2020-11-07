@@ -9,8 +9,8 @@ public class MySingleLinked {
         HeroNode hero1 = new HeroNode(1,"宋江","及时雨");
         HeroNode hero2 = new HeroNode(2,"宋江11","及时雨234");
         HeroNode hero3 = new HeroNode(3,"宋江33","及时雨234");
-        HeroNode hero4 = new HeroNode(3,"宋江33","及时雨234");
-        HeroNode hero5 = new HeroNode(2,"宋江33","及时雨234");
+        HeroNode hero4 = new HeroNode(4,"宋江332","及时雨234");
+        HeroNode hero5 = new HeroNode(5,"宋江332","及时雨234");
 //        singleLinkedList.addNode(hero1);
 //        singleLinkedList.addNode(hero2);
         singleLinkedList.addByOrder2(hero2);
@@ -20,12 +20,22 @@ public class MySingleLinked {
         singleLinkedList.addByOrder2(hero3);
 
         singleLinkedList.showList();
+        //删除节点
+        singleLinkedList.deleteNode(hero3);
+        singleLinkedList.deleteNode(hero5);
+        singleLinkedList.deleteNode(hero1);
+        singleLinkedList.showList();
+        System.out.println("链表长度是：" + singleLinkedList.getLength( singleLinkedList.getHead()));
     }
 }
 
 //定义 SingleLinkedList 管理英雄
 class SingleLinkedList{
     private HeroNode head = new HeroNode(0,"","");
+
+    public HeroNode getHead() {
+        return head;
+    }
 
     //添加节点，第一种方式，添加到链表尾部
     public void addNode(HeroNode newNode){
@@ -134,10 +144,19 @@ class SingleLinkedList{
         HeroNode temp = head;
         boolean flag = false; // 是否找到了相应的节点
         while (true){
-            if (temp.no == node.no ){
+            if (temp == null){
+                break;
+            }
+            if (temp.next.no == node.no ){
                 flag = true;
                 break;
             }
+            temp = temp.next;
+        }
+        if (flag){
+            temp.next = temp.next.next;
+        }else {
+            System.out.println("要删除的节点不存在");
         }
     }
     //展示链表的信息
@@ -148,6 +167,26 @@ class SingleLinkedList{
             temp = temp.next;
         }
     }
+
+    //求单链表的长度
+    public int getLength(HeroNode head){
+        if (head.next == null){
+            return 0;
+        }
+        int length = 0;
+        HeroNode temp = head.next;
+        while (temp != null){
+            length++;
+            temp = temp.next;
+        }
+        return length;
+    }
+
+    //查找单链表的倒数第k个节点
+    /*public HeroNode getLastKNode(int k){
+        HeroNode temp = head.next;
+        while ()
+    }*/
 }
 class HeroNode {
     public int no;
