@@ -5,6 +5,7 @@ public class Student implements Cloneable{
     private Subject subject;
     //基础数据类型
     private String name;
+
     private int age;
 
     public Student() {
@@ -42,7 +43,7 @@ public class Student implements Cloneable{
 
     @Override
     public Object clone(){
-        //深拷贝
+        //深拷贝：在clone()方法中，重写构造函数，从而实现深拷贝
         try{
             Student student =(Student) super.clone();
             student.subject  = (Subject)subject.clone();
