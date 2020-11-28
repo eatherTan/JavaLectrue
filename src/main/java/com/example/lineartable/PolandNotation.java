@@ -5,7 +5,8 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * * 逆波兰表达式计算器
+ *  逆波兰表达式计算器
+ *  后缀表达式
  */
 public class PolandNotation {
     public static void main(String[] args) throws Exception {

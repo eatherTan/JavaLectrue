@@ -1,7 +1,7 @@
 package com.example.lineartable;
 
 /**
- * 波兰表达式
+ * 波兰表达式 （中缀表达式）
  */
 public class Calculate {
     public static void main(String[] args) {
