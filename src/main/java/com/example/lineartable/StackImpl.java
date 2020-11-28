@@ -2,7 +2,7 @@ package com.example.lineartable;
 
 import java.util.LinkedList;
 
-public class StackImpl implements Stack{
+public class StackImpl implements Stack1{
 //这里要不要用new 呢， 这里要用一个变量存储栈或队列中的元素
     private LinkedList obj = new LinkedList();
 

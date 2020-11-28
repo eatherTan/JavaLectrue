@@ -1,5 +1,8 @@
 package com.example.lineartable;
 
+/**
+ * 波兰表达式
+ */
 public class Calculate {
     public static void main(String[] args) {
         String s = "4*6+2+7";

@@ -10,11 +10,11 @@ public class Josephe {
 }
 
 //常见一个Boy类，来表示一个节点
-class Boy{
-    public int no;
-    public Boy next;
-
-    public Boy(int no) {
-        this.no = no;
-    }
-}
+//class Boy{
+//    public int no;
+//    public Boy next;
+//
+//    public Boy(int no) {
+//        this.no = no;
+//    }
+//}

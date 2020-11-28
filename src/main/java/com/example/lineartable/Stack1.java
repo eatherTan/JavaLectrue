@@ -1,6 +1,6 @@
 package com.example.lineartable;
 
-public interface Stack {
+public interface Stack1 {
 
     void push(Object o);
 
