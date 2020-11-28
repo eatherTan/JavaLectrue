@@ -155,10 +155,19 @@ class SingleLinkedList{
         HeroNode temp = head;
         boolean flag = false; // 是否找到了相应的节点
         while (true){
-            if (temp.no == node.no ){
+            if (temp == null){
+                break;
+            }
+            if (temp.next.no == node.no ){
                 flag = true;
                 break;
             }
+            temp = temp.next;
+        }
+        if (flag){
+            temp.next = temp.next.next;
+        }else {
+            System.out.println("要删除的节点不存在");
         }
     }
     //获取倒数第k个节点:使用双指针的方式解决，两个指针，一个走更快，一个走的更慢
@@ -290,6 +299,26 @@ class SingleLinkedList{
         }
         return aheah.next;
     }
+
+    //求单链表的长度
+    public int getLength(HeroNode head){
+        if (head.next == null){
+            return 0;
+        }
+        int length = 0;
+        HeroNode temp = head.next;
+        while (temp != null){
+            length++;
+            temp = temp.next;
+        }
+        return length;
+    }
+
+    //查找单链表的倒数第k个节点
+    /*public HeroNode getLastKNode(int k){
+        HeroNode temp = head.next;
+        while ()
+    }*/
 }
 class HeroNode {
     public int no;
