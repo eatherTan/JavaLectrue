@@ -2,8 +2,11 @@ package com.example.lineartable;
 
 /**
  * 波兰表达式 （中缀表达式）
+ * 中缀表达式需要两个栈来存放，一个存档数字，一个存放字符
+ * 判断优先级，出栈计算结果
+ * 还没有完成呀呀呀呀呀呀呀哎呀------------
  */
-public class Calculate {
+public class PolandCalculate {
     public static void main(String[] args) {
         String s = "4*6+2+7";
         String address="上海^上海市@闵行区#吴中路";

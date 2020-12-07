@@ -17,18 +17,31 @@ public class PolandNotation {
         String suffixExpression1  = "30 4 + 5 * 6 -";  //结果为164
         //思路：先将 "3 4 + 5 * 6 -"  放入ArrayList中
         //2.将ArrayList传递给一个方法，遍历ArrayList 配合栈完成计算
-        List<String> list = getListString(suffixExpression1);
+        //3.将得到中缀表达式对应的List 转换成后缀表达式的List
+        List<String> list = doInfixExpressionList(suffixExpression1);
         int res = calculate(list);
         System.out.println("运算结果为：" + res);
 
     }
 
-    public static List<String> getListString(String suffixExpression){
-        String[] split = suffixExpression.split(" ");
-        List<String> list = new ArrayList<>();
-        for (String item : split){
-            list.add(item);
-        }
+    public static List<String> doInfixExpressionList(String s){
+
+        List<String> list = new ArrayList<>();//存放中缀表达式内容
+        int i = 0;
+        String str ;
+        char c;
+        do {
+            //如果c是一个非数组，需要加入到list
+            if ((c= s.charAt(i))<48 || (c= s.charAt(i))>57 ){
+                list.add(""+c);
+                i++;
+            } else { //如果是一个数，需要考虑多位数
+                str = "";
+                while (i < str.length() && (c=s.charAt(i)) >= 48 && (c=s.charAt(i)) <= 57)
+                    str += c;
+                    i++;
+            }
+        }while (i < s.length());
         return list;
     }
 
