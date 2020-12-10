@@ -26,7 +26,7 @@ public class LongestCommonPrefix14 {
         for (int i = 1; i < strs.length; i++){
             int j = 0;
             for (; j < strs[i].length() && j < pre.length(); j++){  //注意： j < pre.length() 这个条件要放在for中，不能放在下面的if中
-                if ( pre.charAt(j) != strs[i].charAt(j) ){
+                if ( pre.charAt(j) != strs[i].charAt(j) ){ //当第j个位置的字母一样时，j往后移，继续比较，当第j个位置的字母不一样时，停止后移，退出当前循环
                     break;
                 }
             }
