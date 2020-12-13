@@ -1,13 +1,30 @@
 package com.example.sort;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class InsertSort {
 
     public static void main(String[] args) {
-        int[] arr = {114,109,1,34};
+        /*int[] arr = {114,109,1,34};
         insetSort(arr);
         for (int i = 0; i< arr.length; i++){
             System.out.println(arr[i]);
+        }*/
+
+        //计算算法运行时间：
+        int[] arr = new int[80000];
+        for (int i =0; i < arr.length; i++){
+            arr[i] = (int)(Math.random() * 80000);
         }
+        Date date1 = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String date1Str = sdf.format(date1);
+        System.out.println("排序前的时间是：" + date1Str);
+        insetSort(arr);
+        Date date2 = new Date();
+        String date2Str = sdf.format(date2);
+        System.out.println("排序后的时间是：" + date2Str);
     }
 
     public static void insetSort(int[] arr){
