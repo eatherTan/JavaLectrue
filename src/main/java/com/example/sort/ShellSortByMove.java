@@ -22,7 +22,8 @@ public class ShellSortByMove {
     }
 
     /**
-     * 自己写一下希尔排序
+     * 自己写一下希尔排序:
+     * 缩小增量排序
      * @param arr
      */
     public void shellSort1(int[] arr){
