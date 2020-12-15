@@ -3,7 +3,7 @@ package com.example.leetcode;
 /**
  * 查找插入位置
  */
-public class SearchInsert {
+public class SearchInsert35 {
 //    假设升序
     public static void main(String[] args) {
         int[] nums = {1,3,5,6};

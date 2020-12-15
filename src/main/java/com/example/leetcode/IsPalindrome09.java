@@ -1,6 +1,6 @@
 package com.example.leetcode;
 
-public class IsPalindrome {
+public class IsPalindrome09 {
 //    输入: 121
 //    输出: true
 //    输入: -121
