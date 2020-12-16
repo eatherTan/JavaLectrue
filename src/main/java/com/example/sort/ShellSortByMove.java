@@ -20,6 +20,32 @@ public class ShellSortByMove {
         String date2Str = sdf.format(date2);
         System.out.println("排序后的时间是：" + date2Str);
     }
+
+    /**
+     * 自己写一下希尔排序
+     * @param arr
+     */
+    public void shellSort1(int[] arr){
+        for (int gap = arr.length/2; gap > 0 ; gap/=2) {
+            for (int i = gap; i < arr.length; i++) {
+                int j = 1; //要插入的index
+                int temp = arr[j];
+
+                if (arr[j] < arr[j-gap]){
+                    while (j-gap >= 0 && temp < arr[j-gap]){
+                        arr[j] = arr[j-gap];
+                        j-=gap;
+                    }
+                }
+                arr[j-gap] = temp;
+            }
+        }
+    }
+
+
+
+
+
     /**
      * 对交换式的希尔排序进行优化
      * 使用移位法完成
