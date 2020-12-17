@@ -21,6 +21,7 @@ public class RemoveNthFromEnd19 {
             node1 = node1.next;
         }
     }
+    //放到leetcode上执行已经通过，但是不知道为什么，我自己写的ListNode测试用例去执行，就会空指针
     /**
      * 给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。
      * 示例：
@@ -39,10 +40,10 @@ public class RemoveNthFromEnd19 {
         ListNode first = dummyHead;
         ListNode second = dummyHead;
         int count = 0;
-        while (first != null){
+        while (first.next != null){
             first = first.next;
             count++;
-            if (count>n-1){
+            if (count>n){
                 second = second.next;
             }
         }
