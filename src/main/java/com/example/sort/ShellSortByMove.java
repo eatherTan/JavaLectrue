@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class ShellSortByMove {
     public static void main(String[] args) {
-        int[] arr = new int[80000];
+        int[] arr = new int[8];
         for (int i =0; i < arr.length; i++){
             arr[i] = (int)(Math.random() * 80000);
         }
@@ -15,10 +15,28 @@ public class ShellSortByMove {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
         String date1Str = sdf.format(date1);
         System.out.println("排序前的时间是：" + date1Str);
-        shellInsert(arr);
+        shellSort1(arr);
         Date date2 = new Date();
         String date2Str = sdf.format(date2);
         System.out.println("排序后的时间是：" + date2Str);
+    }
+
+    /**
+     * 12.30 又来写了一遍，写不出
+     * @param arr
+     */
+    public static void shellSortTwice(int[] arr){
+        for (int gap = arr.length/2; gap > 0; gap/=2){
+            for (int i = gap; i < arr.length; i++){
+                int insertIndex = i;
+                int value = arr[insertIndex];
+                while (insertIndex-gap > 0 && arr[insertIndex-gap] > value){
+                    arr[insertIndex] = arr[insertIndex-gap];        //这一步又很难理解了。
+                    insertIndex-=gap;
+                }
+                arr[i] = value;
+            }
+        }
     }
 
     /**
@@ -26,10 +44,10 @@ public class ShellSortByMove {
      * 缩小增量排序
      * @param arr
      */
-    public void shellSort1(int[] arr){
+    public static void shellSort1(int[] arr){
         for (int gap = arr.length/2; gap > 0 ; gap/=2) {
             for (int i = gap; i < arr.length; i++) {
-                int j = 1; //要插入的index
+                int j = i; //要插入的index
                 int temp = arr[j];
 
                 if (arr[j] < arr[j-gap]){
@@ -38,9 +56,11 @@ public class ShellSortByMove {
                         j-=gap;
                     }
                 }
-                arr[j-gap] = temp;
+                arr[j] = temp;
             }
         }
+        System.out.println( "轮希尔排序" +  Arrays.toString(arr));
+
     }
 
 
@@ -55,7 +75,7 @@ public class ShellSortByMove {
      * 把步骤整合后的希尔排序:使用的是移位法完成的希尔排序
      * @param arr
      */
-    private static void shellInsert(int[] arr) {
+    private static void shellSort(int[] arr) {
         int count = 0;
         //增量gap,并逐个缩小增量
         for (int gap = arr.length/2; gap > 0; gap/=2 ) {
@@ -74,7 +94,7 @@ public class ShellSortByMove {
                     }
 
             }
-//            System.out.println("第" + (++count) + "轮希尔排序" +  Arrays.toString(arr));
+            System.out.println("第" + (++count) + "轮希尔排序" +  Arrays.toString(arr));
         }
     }
 }
