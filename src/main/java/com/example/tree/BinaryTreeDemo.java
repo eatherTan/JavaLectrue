@@ -68,7 +68,7 @@ class BinaryTree{
 }
 
 //先创建HeroNode 节点
-class HeroNode{
+class HeroNode {
     private int no;
     private String name;
     private HeroNode left;
@@ -120,36 +120,71 @@ class HeroNode{
     }
 
     //前序遍历方法
-    public void preOrder(){
+    public void preOrder() {
         System.out.println(this);
         //递归向左子树前序遍历
-        if (this.left != null){
+        if (this.left != null) {
             this.left.preOrder();
         }
-        if (this.right != null){
+        if (this.right != null) {
             this.right.preOrder();
         }
     }
+
     //中序遍历
-    public void inFixOrder(){
+    public void inFixOrder() {
         //递归向左子树中序遍历
-        if (this.left != null){
+        if (this.left != null) {
             this.left.inFixOrder();
         }
         System.out.println(this);
-        if (this.right != null){
+        if (this.right != null) {
             this.right.inFixOrder();
         }
     }
+
     //后续遍历
-    public void postOrder(){
+    public void postOrder() {
         //递归向左子树中序遍历
-        if (this.left != null){
+        if (this.left != null) {
             this.left.postOrder();
         }
-        if (this.right != null){
+        if (this.right != null) {
             this.right.postOrder();
         }
         System.out.println(this);
+    }
+
+    //前序遍历查找
+
+    /**
+     * @param no 查找no
+     * @return 如果找到就返回HeroNode，否则返回null
+     */
+    /*public HeroNode preOrderSearch1(int no){
+        if (this != null) {
+            if (this.no == no) {
+                return this;
+            } else if (this.left != null) {
+                this.left.preOrderSearch(no);
+            }else if (this.right != null){
+                this.right.preOrderSearch(no);
+            }
+        }
+        return null;
+    }*/
+    public HeroNode preOrderSearch(int no) {
+        if (this.no == no) {
+            return this;
+        }
+        HeroNode resNode = null;
+        if (this.left != null) {
+            resNode = this.left.preOrderSearch(no);
+        }
+        if (this.right != null) {
+            resNode = this.right.preOrderSearch(no);
+        }
+
+        return resNode;
     }
 }
