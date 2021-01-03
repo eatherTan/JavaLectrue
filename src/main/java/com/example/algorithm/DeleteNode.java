@@ -6,7 +6,9 @@ public class DeleteNode {
 //
 //返回删除后的链表的头节点。
     public ListNode deleteNode(ListNode head, int val) {
-        if(head.val == val) return head.next;
+        if(head.val == val) {
+            return head.next;
+        }
         ListNode pre = head, cur = head.next;
         while(cur != null && cur.val != val) {
             pre = cur;
