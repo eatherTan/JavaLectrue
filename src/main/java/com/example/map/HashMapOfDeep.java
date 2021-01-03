@@ -5,6 +5,7 @@ import java.util.HashMap;
 /**
  * 用打断点的方式
  * 深度了解HashMap的底层原理
+ * 打断点：用Force step in 进入底层调用方法
  */
 public class HashMapOfDeep {
     public static void main(String[] args) {

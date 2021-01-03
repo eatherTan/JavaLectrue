@@ -1,4 +1,4 @@
-package com.example.sort;
+package com.example.search;
 
 //二分查找法
 public class BinarySearch {
