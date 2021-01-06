@@ -38,6 +38,7 @@ public class MySqrt69 {
 
     /**
      * 解法2：二分法
+     * 由于 xx 平方根的整数部分 ans 是满足 k^2 <= x 的最大 k 值，因此我们可以对 k 进行二分查找，从而得到答案。
      */
 
     public static int mySqrt2(int x){
