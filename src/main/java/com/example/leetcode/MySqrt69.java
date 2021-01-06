@@ -26,6 +26,7 @@ public class MySqrt69 {
     }
 
     /**
+     * 解法1：
      * 把x^1/2 使用数学函数替代，替代成形式不同的式子
      * x^1/2 = e^1/2(lnx)
      */
@@ -33,5 +34,24 @@ public class MySqrt69 {
         int ans = (int)Math.exp(0.5*Math.log(x));
         return (long)(ans + 1) * (ans + 1) <= x ? ans + 1 : ans;
         //为什么要加上long呀？？
+    }
+
+    /**
+     * 解法2：二分法
+     */
+
+    public static int mySqrt2(int x){
+        int left = 1, right = x;
+        int ans = -1;
+        while (left < right){
+            int mid = left + (right-1)/2;
+            if ((long)mid*mid < x){
+                ans = mid;
+                left = mid+1;
+            }else {
+                right = mid-1;
+            }
+        }
+        return ans;
     }
 }
