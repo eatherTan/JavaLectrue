@@ -7,6 +7,7 @@ public class AtomicIntegerThreadTest {
 
     public static void increase() {
         count++;
+        //System.out.println(count);
     }
 
     public static void main(String[] args) {
