@@ -47,7 +47,18 @@ public class GetIntersectionNode {
         node7.next = node8;
         node8.next = node9;
         ListNode resultNode = getIntersectionNode(node1, node4);
-        System.out.println(resultNode.val);  //共有节点是node5
+        if (resultNode!=null) {
+            System.out.println(resultNode.val);  //共有节点是node5
+        }else {
+            System.out.println("null");
+        }
+        //第二种方法测试：
+        ListNode resultNode2 = getIntersectionNode2(node1, node4);
+        if (resultNode!=null) {
+            System.out.println(resultNode2.val);  //共有节点是node5
+        }else {
+            System.out.println("null");
+        }
     }
 
     /**
@@ -85,4 +96,13 @@ public class GetIntersectionNode {
     /**
      * 方法二：使用双指针的方式
      */
+    public static ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
+        ListNode tempA = headA,tempB = headB;
+        while (tempA != tempB){
+           tempA = tempA==null ? headB : tempA.next;
+           tempB = tempB==null ? headA : tempB.next;
+        }
+        return tempA;
+    }
+
 }
