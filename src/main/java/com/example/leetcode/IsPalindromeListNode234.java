@@ -2,7 +2,7 @@ package com.example.leetcode;
 
 /**
  *
- * 是否回文链表
+ * 是否回文链表: 1.8 目前还有问题！参考一下答案
  */
 public class IsPalindromeListNode234 {
     public static void main(String[] args) {
