@@ -2,10 +2,21 @@ package com.example.leetcode;
 
 import java.util.regex.Pattern;
 
+/**
+ * 请你来实现一个 atoi 函数，使其能将字符串转换成整数。
+ * 输入: "42"
+ * 输出: 42
+ */
 public class MyAtoi8 {
     public static void main(String[] args) {
-        System.out.println(myAtoi("o"));
+        System.out.println(myAtoi("4193 with words"));
     }
+
+    /**
+     * 目前有点问题
+     * @param s
+     * @return
+     */
     public static int myAtoi(String s) {
         String num = s.trim();
         Pattern pattern = Pattern.compile("[0-9]");
