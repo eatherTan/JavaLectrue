@@ -1,5 +1,12 @@
 package com.example.thread;
 
+/**
+ * 静态代理设计模式
+ *
+ * new WeddingCompany(new You()).happyMarry();
+ *
+ * //new Thread(线程对象).start();
+ */
 public class ThreadByImplementRunnable implements Runnable{
 
     @Override
