@@ -2,6 +2,9 @@ package com.example.leetcode.addNumber;
 
 import java.util.List;
 
+/**
+ * 两个链表的每个节点相加
+ */
 public  class AddTwoNumber {
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode dummyHead = new ListNode(0);
