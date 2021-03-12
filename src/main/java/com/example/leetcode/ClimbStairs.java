@@ -1,7 +1,7 @@
 package com.example.leetcode;
 
 /**
- * 爬楼梯的方式
+ * 爬楼梯的方式：每一次走一节或者两节，有多少中爬楼梯的方式
  */
 public class ClimbStairs {
     public int climbStairs(int n) throws Exception {
