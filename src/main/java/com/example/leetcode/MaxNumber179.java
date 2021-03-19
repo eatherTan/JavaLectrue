@@ -70,6 +70,13 @@ public class MaxNumber179 {
         quickSort(strs,pivotIdx+1,endIdx);
     }
 
+    /**
+     * 好难！！！！！
+     * @param strs
+     * @param startIdx
+     * @param endIdx
+     * @return
+     */
     public static int partition(String[] strs, int startIdx, int endIdx){
         //key
         String pivot = strs[startIdx];
@@ -88,4 +95,9 @@ public class MaxNumber179 {
         strs[left] = pivot;
         return left;
     }
+
+    /**
+     * 找出第一个不重复的字符
+     * 遍历，第一个字符的值，往下找，找是否有与这个字符相等的，如果没有就
+     */
 }

@@ -3,10 +3,10 @@ package com.example.thread;
 import java.util.concurrent.*;
 
 /**
- * 1. 实现Callable接口，需要返回值类型
+ * 1.实现Callable接口，需要返回值类型
  * 2.重写call方法，需要抛出异常
  * 3.创建目标对象
- * 4.创建爱你执行服务： ExecutorService service = Executors.newFixedThreadPool(1);
+ * 4.创建线程执行服务： ExecutorService service = Executors.newFixedThreadPool(1);
  * 5.提交执行：Futrue<Boolean> result = service.submit();
  * 6.获取结果：Boolean r1 = result.get();
  * 7.关闭服务：service.shutdown();
