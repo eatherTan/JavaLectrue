@@ -1,6 +1,7 @@
 package com.example.map;
 
 import java.util.HashMap;
+import java.util.Hashtable;
 
 /**
  * 用打断点的方式
@@ -40,5 +41,7 @@ public class HashMapOfDeep {
         map.put("24", "24");
         //第二个扩容点
         map.put("25", "25");
+
+        Hashtable hashtable;
     }
 }
