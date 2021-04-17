@@ -1,6 +1,6 @@
 package com.example.leetcode;
 
-public class LengthOfLastWord58 {
+public class L058LengthOfLastWord {
     public static void main(String[] args) {
 //        String s = "Hello World! ";
         String s = "t";

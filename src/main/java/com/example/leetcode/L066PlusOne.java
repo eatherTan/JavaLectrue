@@ -1,6 +1,6 @@
 package com.example.leetcode;
 
-public class PlusOne66 {
+public class L066PlusOne {
 
     public static void main(String[] args) throws Exception {
         int[] digits = {9,9};

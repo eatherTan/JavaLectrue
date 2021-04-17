@@ -1,6 +1,6 @@
 package com.example.leetcode;
 
-public class MaxPrefix14 {
+public class L014MaxPrefix {
 
     public static void main(String[] args) {
 //        String[] strs = { "flower","flow","flight"};

@@ -29,7 +29,7 @@ import java.util.Arrays;
  ```
  */
 
-public class MaxNumber179 {
+public class L179MaxNumber {
     public static void main(String[] args) {
         int[] nums = {3,30,34,5,9};
         System.out.println(largestNumber(nums));

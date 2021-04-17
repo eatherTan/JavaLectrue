@@ -6,7 +6,7 @@ package com.example.leetcode;
  * 通过其它的数学函数代替平方根函数得到精确结果，取整数部分作为答案；
  * 通过数学方法得到近似结果，直接作为答案。
  */
-public class MySqrt69 {
+public class L069MySqrt {
 
     public static void main(String[] args) {
         System.out.println(mySqrt(2147483647));

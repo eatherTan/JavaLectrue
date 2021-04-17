@@ -4,7 +4,7 @@ package com.example.leetcode;
  *
  * 是否回文链表: 1.8 目前还有问题！参考一下答案
  */
-public class IsPalindromeListNode234 {
+public class L234IsPalindromeListNode {
     public static void main(String[] args) {
         ListNode node1 = new ListNode(1);
         ListNode node2 = new ListNode(2);
