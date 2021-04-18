@@ -14,5 +14,6 @@ public class Client {
         Subject subject = (Subject) Proxy.newProxyInstance(classType.getClassLoader(), realSubject.getClass().getInterfaces(),handler);
         subject.request("tanxiaolian");
         System.out.println(subject.getClass());
+
     }
 }
