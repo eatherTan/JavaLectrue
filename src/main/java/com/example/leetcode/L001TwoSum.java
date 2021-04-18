@@ -14,7 +14,7 @@ import java.util.HashMap;
  * 输入：nums = [3,2,4], target = 6
  * 输出：[1,2]
  */
-public class TwoSum01 {
+public class L001TwoSum {
 
     public static void main(String[] args) {
         int[] nums = {3,3};

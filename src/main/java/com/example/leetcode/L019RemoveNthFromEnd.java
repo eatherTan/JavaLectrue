@@ -2,7 +2,7 @@ package com.example.leetcode;
 
 import java.util.List;
 
-public class RemoveNthFromEnd19 {
+public class L019RemoveNthFromEnd {
     public static void main(String[] args) {
         ListNode head = new ListNode(-1);
         ListNode node1 = new ListNode(3);

@@ -9,7 +9,7 @@ package com.example.leetcode;
  * 返回链表 4->5.
  *
  */
-public class GetKthFromEnd22 {
+public class L022GetKthFromEnd {
 
     /**
      * 双指针法：快指针先走k步，慢指针再走，当快指针走到尾巴的时候，慢指针指在

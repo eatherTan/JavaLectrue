@@ -1,6 +1,6 @@
 package com.example.leetcode;
 
-public class ReverseListNode206 {
+public class L206ReverseListNode {
 
     /**
      * 使用头插法反转链表

@@ -4,7 +4,7 @@ package com.example.leetcode;
  * 青蛙爬楼梯，青蛙一次只能跳一级或2级楼梯
  * 现在有n阶楼梯，共有多少中跳法？
  */
-public class ClimbStairs70 {
+public class L070ClimbStairs {
     public static void main(String[] args) {
         int n = 5;
         System.out.println(climbStairs(6));

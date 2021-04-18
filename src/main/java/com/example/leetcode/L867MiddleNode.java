@@ -21,7 +21,7 @@ package com.example.leetcode;
  * 提示：
  * 给定链表的结点数介于 1 和 100 之间。
  */
-public class MiddleNode867 {
+public class L867MiddleNode {
 
     public static void main(String[] args) {
         ListNode head = new ListNode(-1);

@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  * 输入: "42"
  * 输出: 42
  */
-public class MyAtoi8 {
+public class L008MyAtoi {
     public static void main(String[] args) {
         System.out.println(myAtoi("4193 with words"));
     }
