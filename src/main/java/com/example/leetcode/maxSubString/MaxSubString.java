@@ -6,11 +6,16 @@ import java.util.Map;
 public class MaxSubString {
 
     public static void main(String[] args) {
-        String s = "pwwkew";
+        String s = "pwwkew12";
         ;
         System.out.println(lengthOfLongestSubstring(s));
     }
 
+    /**
+     * 竟然看不懂 晕
+     * @param s
+     * @return
+     */
     public static int lengthOfLongestSubstring(String s) {
         int n = s.length(), ans = 0;
         Map<Character, Integer> map = new HashMap<>();
