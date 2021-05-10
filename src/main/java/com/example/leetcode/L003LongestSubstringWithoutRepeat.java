@@ -1,5 +1,6 @@
 package com.example.leetcode;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,10 +18,41 @@ import java.util.Set;
  */
 public class L003LongestSubstringWithoutRepeat {
     public static void main(String[] args) {
-        String s = "hell0";
+        String s = "abcabtycbb";
         System.out.println(longestSubstringWithoutRepeat(s));
     }
 
+    /**
+     * 这种方式是把从每个字符开始的不重复子串都拿出来，每一个都比较长度，然后拿最大的长度
+     *
+     * 执行结果：
+     * 第0 次for循环
+     * abc
+     * 移除元素a
+     * 第1 次for循环
+     * abc
+     * 移除元素b
+     * 第2 次for循环
+     * abc
+     * 移除元素c
+     * 第3 次for循环
+     * abc
+     * 移除元素a
+     * 第4 次for循环
+     * bc
+     * 移除元素b
+     * 第5 次for循环
+     * bc
+     * 移除元素c
+     * 第6 次for循环
+     * b
+     * 移除元素b
+     * 第7 次for循环
+     * b
+     * 3
+     * @param s
+     * @return
+     */
     private static int longestSubstringWithoutRepeat(String s) {
 
         Set<Character> characterSet = new HashSet<>();
@@ -31,19 +63,37 @@ public class L003LongestSubstringWithoutRepeat {
                 characterSet.add(s.charAt(right));
                 right ++;
             }
+            System.out.println("第" +left + " 次for循环");
+            characterSet.stream().forEach(System.out::print);
+            System.out.println();
+
             if(right != s.length()){   //重要：这一步要放在
                 System.out.println("移除元素" + s.charAt(left));
                 characterSet.remove(s.charAt(left));
             }
-            characterSet.stream().forEach(System.out::print);
-            System.out.println();
-            System.out.println(left);
             result = Math.max(result,right-left);
         }
         return result;
     }
 
-    private static int longestSubstringWithoutRepeat2(String s) {
+    /**
+     * 试着优化，把重复字符出现的位置记录下来
+     * @param s
+     * @return
+     */
+   /* private static int longestSubstringWithoutRepeat2(String s) {
+        HashMap<Character,Integer> map = new HashMap<>();
+        int result = 0;
+        int right = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (map.containsKey()){
+
+            }
+        }
+    }*/
+
+
+        private static int longestSubstringWithoutRepeat3(String s) {
 
         Set<Character> characterSet = new HashSet<>();
         int right = -1; //从0开始比较，
