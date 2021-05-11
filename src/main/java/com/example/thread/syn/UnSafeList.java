@@ -3,6 +3,9 @@ package com.example.thread.syn;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 学习线程为什么不安全
+ */
 public class UnSafeList {
     public static void main(String[] args) throws InterruptedException {
         List<String> list = new ArrayList<>();

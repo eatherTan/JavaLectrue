@@ -5,12 +5,13 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class CasLock {
+public class CasLock implements Runnable{
+
     private static final CountDownLatch latch = new CountDownLatch(5);
     private static AtomicInteger i = new AtomicInteger(0);
     private static int p = 0;
 
-    /*public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
         long time = System.currentTimeMillis();
         ExecutorService pool = Executors.newFixedThreadPool(5);
         for(int j = 0; j < 5; j++) {
@@ -29,10 +30,10 @@ public class CasLock {
         System.out.println("p=" + p);
         System.out.println("i=" + i);
         pool.shutdown();
-    }*/
-
-    public static void main(String[] args) {
-
     }
+
+    /*public static void main(String[] args) {
+
+    }*/
 
 }
