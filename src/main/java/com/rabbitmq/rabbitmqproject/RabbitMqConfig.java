@@ -1,4 +1,4 @@
-package com.redis.redisproject;
+package com.rabbitmq.rabbitmqproject;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
