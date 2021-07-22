@@ -38,7 +38,7 @@ public class L206ReverseListNode {
             return head;
         }
         //仔细思考：为什么反转后的链表要把头节点存起来
-        //如果不用ListNode newHead = reverseListNodeByRecursion(head.next);  把头节点存起来，就会得到最后那个节点，但是因为进行了head.next = null;
+        //如果不用变量ListNode newHead = reverseListNodeByRecursion(head.next);  把头节点存起来，就会得到最后那个节点head，但是因为进行了head.next = null;
         //所以在拿到最后那个节点时，也找不到其他节点了。head.next = null
         ListNode newHead = reverseListNodeByRecursion(head.next);
         head.next.next = head;
