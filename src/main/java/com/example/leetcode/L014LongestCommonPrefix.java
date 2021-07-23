@@ -2,9 +2,11 @@ package com.example.leetcode;
 
 public class L014LongestCommonPrefix {
     public static void main(String[] args) {
-//        String[] strs = { "flower","flow","flowight"};
-        String[] strs = {"","b1","c"};
+        String[] strs = { "flower","flow","flowight"};
+//        String[] strs = {"","b1","c"};
         System.out.println("pre 是" + longestCommonPrefix(strs));
+        System.out.println("pre 是" + longestCommonPrefix2(strs));
+
         System.out.println();
 //        System.out.println("b".substring(0,0));
 //        System.out.println(1);
@@ -32,6 +34,27 @@ public class L014LongestCommonPrefix {
             }
             pre = pre.substring(0,j);
             if (pre.equals("")){  //当前缀为空""时，可以直接返回，不用再比较了，减少比较次数
+                return pre;
+            }
+        }
+        return pre;
+    }
+
+    /**
+     * 2021.7.22 完成公共最长子串，我认为更好理解一点
+     * 使用while可以快速的代入语境
+     * @param strs
+     * @return
+     */
+    public static String longestCommonPrefix2(String[] strs){
+        String pre = strs[0];
+        for (int i = 1; i < strs.length; i++) {
+            int j = 0;
+            while (j<pre.length() && j<strs[i].length() && pre.charAt(j) == strs[i].charAt(j) ){
+                j++;
+            }
+            pre = pre.substring(0,j);
+            if (pre.equals("")){
                 return pre;
             }
         }
