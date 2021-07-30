@@ -12,7 +12,9 @@ public class L069MySqrt {
         System.out.println(mySqrt(2147483647));
 
         //第二种方式
-        System.out.println(mySqrt1(2147483647));
+//        System.out.println(mySqrt2(2147483647));
+        System.out.println(sqrtByBinarySearch(58*59));
+
     }
 
     /**
@@ -54,5 +56,31 @@ public class L069MySqrt {
             }
         }
         return ans;
+    }
+
+    /**
+     * 使用二分法来计算平方根的整数部分
+     */
+    public static int sqrtByBinarySearch(int x){
+        if (x < 0){
+            return -1;
+        }
+        if (x == 0){
+            return 0;
+        }
+        int left = 1, right = x-1;
+        int mid = 0;
+        while (left <= right){
+            mid = (left + right)/2;
+            if (mid * mid <= (long)x){
+                if (mid * mid <= (long)x && (mid+1)*(mid+1) > (long)x){
+                    return mid;
+                }
+                left = mid;
+            }else if (mid * mid > (long)x){
+                right = mid;
+            }
+        }
+        return -1;
     }
 }
