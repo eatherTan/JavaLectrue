@@ -76,4 +76,27 @@ public class L001TwoSum {
         }
         return -1;
     }
+
+    /**
+     * 如果给定的数组是有序的,使用双指针的方式来寻找 两个数的和等于目标值
+     *
+     */
+    public static int[] twoSumPoint(int[] nums, int target) {
+        int[] result = new int[2];
+        int low = 0, high = nums.length-1;
+        while (low < high) {
+            if (target == nums[low] + nums[high]) {
+                result[0] = low;
+                result[1] = high;
+                return result;
+            }else if (target > nums[low] + nums[high]){
+                low++;
+            }else {
+                high--;
+            }
+        }
+        result[0]=-1;
+        result[1]=-1;
+        return result;
+    }
 }
