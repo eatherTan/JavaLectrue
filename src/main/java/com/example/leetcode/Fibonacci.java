@@ -35,6 +35,7 @@ public class Fibonacci {
 
     /**
      * 暴力递归
+     * 时间复杂度O(N^2)
      */
     public static int fiByRecurse(int index){
         if (index == 0){
@@ -49,6 +50,7 @@ public class Fibonacci {
     /**
      * 递归，减少重复计算
      * 暴力递归会有很多重复计算，因此可以使用数组来把计算过的值保存起来，下次再用
+     * 时间复杂度O(N),空间复杂度O(N)
      */
     public static int fiByRecurse2(int index){
         int[] arr = new int[index+1];
